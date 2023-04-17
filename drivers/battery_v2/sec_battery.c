@@ -24,6 +24,12 @@
 
 bool sleep_mode = false;
 
+static unsigned int STORE_MODE_CHARGING_MAX = STORE_MODE_CHARGING_MAX_VALUE;
+static unsigned int STORE_MODE_CHARGING_MIN = STORE_MODE_CHARGING_MIN_VALUE;
+
+module_param_named(store_mode_max, STORE_MODE_CHARGING_MAX, uint, S_IWUSR | S_IRUGO);
+module_param_named(store_mode_min, STORE_MODE_CHARGING_MIN, uint, S_IWUSR | S_IRUGO);
+
 static enum power_supply_property sec_battery_props[] = {
 	POWER_SUPPLY_PROP_STATUS,
 	POWER_SUPPLY_PROP_CHARGE_TYPE,
